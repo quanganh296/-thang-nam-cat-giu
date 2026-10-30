@@ -20,8 +20,9 @@ export const HomePage: React.FC<HomePageProps> = ({
   onSelectAlbum,
   onOpenLightbox
 }) => {
-  const featuredPhotos = photos.filter((p) => p.featured).slice(0, 4);
-  const heroPhoto = photos[0];
+  // Focus on TTLA photos and featured photos
+  const featuredPhotos = photos.filter((p) => p.featured || p.subject === 'ttla' || p.subject === 'nqa');
+  const heroPhoto = photos.find((p) => p.subject === 'ttla') || photos[0];
   const latestJournal = journals[0];
 
   return (
@@ -31,29 +32,29 @@ export const HomePage: React.FC<HomePageProps> = ({
         <div className="container hero-grid">
           <div className="hero-content">
             <div className="hero-badge">
-              <span>🎞️</span>
-              <span>Ký ức & Ảnh film</span>
+              <span>💖</span>
+              <span>Ký ức tình yêu • NQA & TTLA</span>
             </div>
             
             <h1 className="hero-title">
-              Cất giữ những <em>khoảnh khắc</em> đã qua
+              Cất giữ những <em>nụ cười</em> của Em
             </h1>
 
             <p className="hero-quote">
-              “Có những tháng năm, ta muốn cất giữ bằng những bức ảnh.”
+              “Trong muôn vàn cảnh sắc nhân gian, nụ cười của em là điều kỳ diệu nhất mà anh muốn cất giữ.”
             </p>
 
             <p className="hero-description">
-              Không gian lưu lại những ngày bình yên, cuộn film hoài niệm, tách cà phê sớm mai và những mẩu chuyện không tên giữa dòng đời hối hả.
+              Không gian riêng tư lưu giữ trọn vẹn những bức hình của người con gái tôi yêu (TTLA) và kỷ niệm tình yêu của chúng tôi — từ nụ cười tuổi 20 tinh khôi đến bữa tối sinh nhật ấm áp đong đầy hạnh phúc.
             </p>
 
             <div className="hero-actions">
               <button 
                 type="button" 
                 className="btn btn-primary"
-                onClick={() => onNavigate('albums')}
+                onClick={() => onNavigate('gallery')}
               >
-                <span>Khám phá album</span>
+                <span>Xem ảnh của Em</span>
                 <span>→</span>
               </button>
 
@@ -62,7 +63,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 className="btn btn-outline"
                 onClick={() => onNavigate('timeline')}
               >
-                <span>Dòng thời gian</span>
+                <span>Dòng thời gian tình yêu</span>
               </button>
             </div>
           </div>
@@ -86,15 +87,15 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section style={{ padding: '4.5rem 0', backgroundColor: 'var(--color-paper-light)', borderTop: '1px solid var(--color-border-subtle)', borderBottom: '1px solid var(--color-border-subtle)' }}>
         <div className="container">
           <div className="section-header">
-            <span className="section-tag">Bộ Sưu Tập</span>
+            <span className="section-tag">Album Yêu Thương</span>
             <h2 className="section-title">Những Album Chọn Lọc</h2>
             <p className="section-subtitle">
-              Mỗi album là một chương nhỏ của hành trình, nơi ký ức được sắp xếp theo từng cung bậc cảm xúc.
+              Mỗi album là một chương nhỏ của chuyện tình, lưu lại từng ánh mắt, nụ cười và khoảnh khắc hai ta bên nhau.
             </p>
           </div>
 
           <div className="albums-grid">
-            {albums.slice(0, 4).map((album) => (
+            {albums.map((album) => (
               <AlbumCard
                 key={album.id}
                 album={album}
@@ -109,7 +110,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               className="btn btn-outline"
               onClick={() => onNavigate('albums')}
             >
-              Xem tất cả album ({albums.length})
+              Xem toàn bộ album ({albums.length})
             </button>
           </div>
         </div>
@@ -122,7 +123,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             <span className="section-tag">Khoảnh Khắc Đọng Lại</span>
             <h2 className="section-title">Từng Khung Hình Lưu Giữ</h2>
             <p className="section-subtitle">
-              Một tia nắng nghiêng, trang sách cũ hay bóng chiều buông vội đều đáng để nâng niu.
+              Mỗi bức ảnh là một lời thì thầm của trái tim, lưu lại trọn vẹn nét dịu dàng của Em và lời ước hẹn của Chúng Ta.
             </p>
           </div>
 
@@ -146,7 +147,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               className="btn btn-primary"
               onClick={() => onNavigate('gallery')}
             >
-              Vào thư viện đầy đủ ({photos.length} bức ảnh)
+              Vào thư viện ảnh ({photos.length} khung hình)
             </button>
           </div>
         </div>
@@ -157,7 +158,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         <section style={{ padding: '4.5rem 0', backgroundColor: 'rgba(231, 220, 203, 0.45)', borderTop: '1px solid var(--color-border-subtle)' }}>
           <div className="container container-narrow">
             <div className="section-header" style={{ marginBottom: '2rem' }}>
-              <span className="section-tag">Ghi Chép Mới Nhất</span>
+              <span className="section-tag">Tâm Tình Của Anh</span>
               <h2 className="section-title" style={{ fontSize: '2.2rem' }}>{latestJournal.title}</h2>
               <p className="section-subtitle">
                 {latestJournal.date} • {latestJournal.readTime}
@@ -169,8 +170,8 @@ export const HomePage: React.FC<HomePageProps> = ({
                 “{latestJournal.excerpt}”
               </p>
               
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ display: 'flex', gap: '0.5rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                   {latestJournal.tags.map((tag) => (
                     <span key={tag} className="journal-tag">#{tag}</span>
                   ))}

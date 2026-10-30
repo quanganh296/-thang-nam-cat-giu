@@ -17,10 +17,10 @@ export const Footer: React.FC<FooterProps> = ({ onTabChange }) => {
           <div className="footer-brand">
             <h2>Tháng Năm Cất Giữ</h2>
             <p className="footer-quote">
-              “Có những tháng năm, ta muốn cất giữ bằng những bức ảnh.”
+              “Có những tháng năm, anh muốn cất giữ riêng nụ cười của Em.”
             </p>
             <p style={{ marginTop: '0.75rem', fontSize: '0.85rem', color: '#8c949e' }}>
-              Một không gian hoài niệm mộc mạc dành cho những kỷ niệm, thước phim cũ và những dòng suy tư chân thật.
+              Không gian lưu giữ ký ức tình yêu dành riêng cho TTLA và NQA — cất giữ từng khoảnh khắc thanh xuân ngọt ngào nhất.
             </p>
           </div>
 

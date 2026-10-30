@@ -48,7 +48,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onTabChange }) => {
             </svg>
             <span>Tháng Năm Cất Giữ</span>
           </div>
-          <span className="navbar-tagline">Photo Journal & Memories</span>
+          <span className="navbar-tagline">Ký Ức Của NQA & TTLA</span>
         </div>
 
         {/* Desktop Nav */}

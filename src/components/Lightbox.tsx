@@ -50,6 +50,8 @@ export const Lightbox: React.FC<LightboxProps> = ({
 
   if (!isOpen || !currentPhoto) return null;
 
+  const isBlank = currentPhoto.isPlaceholder || !currentPhoto.url;
+
   return (
     <div 
       className="lightbox-overlay" 
@@ -86,7 +88,22 @@ export const Lightbox: React.FC<LightboxProps> = ({
 
         {/* Main Image Display */}
         <div className="lightbox-main">
-          {imageError ? (
+          {isBlank ? (
+            <div className="lightbox-blank-content">
+              <div className="lightbox-blank-box">
+                <span style={{ fontSize: '3rem', marginBottom: '1rem', display: 'block' }}>📷</span>
+                <h3 style={{ fontFamily: 'var(--font-serif-display)', fontSize: '1.8rem', color: '#292B2F', marginBottom: '0.5rem' }}>
+                  Góc Của NQA
+                </h3>
+                <p style={{ color: '#737B83', maxWidth: '400px', margin: '0 auto 1.5rem', fontSize: '0.95rem' }}>
+                  Khung ảnh hiện đang để trống nền trắng. Chỉ cần lưu ảnh của bạn vào thư mục <code>public/images/</code> với tên <strong>NQA1.jpg</strong>, hệ thống sẽ tự động nhận diện và hiển thị tại đây!
+                </p>
+                <div style={{ display: 'inline-block', padding: '0.4rem 1.2rem', backgroundColor: '#FAF7F2', borderRadius: '9999px', fontSize: '0.85rem', color: '#A58B70', border: '1px solid #E7DCCB' }}>
+                  Trạng thái: Đang chờ ảnh từ Chàng trai
+                </div>
+              </div>
+            </div>
+          ) : imageError ? (
             <div style={{ padding: '4rem 2rem', textAlign: 'center', color: '#E7DCCB' }}>
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ margin: '0 auto 1rem' }}>
                 <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
@@ -121,7 +138,15 @@ export const Lightbox: React.FC<LightboxProps> = ({
         {/* Footer Info */}
         <div className="lightbox-footer">
           <div className="lightbox-info">
-            <h3>{currentPhoto.title}</h3>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
+              {currentPhoto.subject === 'ttla' && (
+                <span className="subject-tag ttla-tag">💖 Nàng Thơ TTLA</span>
+              )}
+              {currentPhoto.subject === 'nqa' && (
+                <span className="subject-tag nqa-tag">Chàng Trai NQA</span>
+              )}
+              <h3 style={{ margin: 0 }}>{currentPhoto.title}</h3>
+            </div>
             <p>{currentPhoto.caption}</p>
           </div>
           <div className="lightbox-details">

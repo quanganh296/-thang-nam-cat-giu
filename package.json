@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/generatePhotosManifest.js",
     "dev": "vite",
+    "prebuild": "node scripts/generatePhotosManifest.js",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },

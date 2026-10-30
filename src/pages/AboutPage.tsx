@@ -11,10 +11,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
       <div className="container container-narrow">
         {/* Header */}
         <div className="section-header">
-          <span className="section-tag">Ý Nghĩa & Khởi Nguồn</span>
+          <span className="section-tag">Ý Nghĩa & Sứ Mệnh</span>
           <h1 className="section-title">Về “Tháng Năm Cất Giữ”</h1>
           <p className="section-subtitle">
-            Một chốn dừng chân nhỏ bé dành riêng cho những điều xưa cũ và những ngày tháng đã qua.
+            Góc nhỏ bình yên nơi NQA lưu giữ nụ cười của người con gái tôi yêu (TTLA) và những ngày tháng chung đôi.
           </p>
         </div>
 
@@ -22,40 +22,49 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
         <div className="about-card">
           <div className="about-quote-box">
             <blockquote>
-              “Có những khoảnh khắc trôi qua rất nhanh, nhưng vẫn xứng đáng được lưu giữ. Đây là nơi dành cho những bức ảnh, những dòng ghi chú và những điều từng mang ý nghĩa đặc biệt.”
+              “Thế giới ngoài kia rộng lớn với muôn vàn cảnh sắc, nhưng với anh, cảnh đẹp nhất chỉ gói gọn trong đôi mắt và nụ cười của Em.”
             </blockquote>
           </div>
 
           <div className="about-prose">
             <p>
-              Giữa một thế giới chuyển động không ngừng nghỉ, nơi hàng triệu hình ảnh được đăng tải và lướt qua chỉ trong một cái chớp mắt, 
-              <strong> Tháng Năm Cất Giữ</strong> được tạo ra như một khoảng lặng ấm áp — một cuốn nhật ký ảnh số mang trọn vẹn tinh thần mộc mạc của ảnh film truyền thống.
+              <strong>Tháng Năm Cất Giữ</strong> không phải là nơi trưng bày cảnh quan, thiên nhiên hay những vật thể vô tri. 
+              Đây là một bảo tàng ký ức nhỏ bé, thiêng liêng và chân thật nhất được <strong>NQA</strong> tạo nên dành riêng cho 
+              người con gái anh yêu — <strong>TTLA</strong>.
             </p>
 
             <p>
-              Ý tưởng bắt nguồn từ cảm giác mở lại chiếc hộp thiếc cũ dưới gầm bàn, tìm thấy những tấm ảnh Polaroid đã ngả màu thời gian, 
-              những cuộn film tráng dở từ mùa đông năm nào, và cuốn sổ tay ghi vội vài dòng cảm xúc bên tách trà chiều. 
-              Mỗi bức ảnh không đơn thuần là điểm ảnh kỹ thuật số, mà là một chiếc chìa khóa mở về quá khứ, nhắc nhở ta về những con người, 
-              những góc phố và những cảm xúc ta từng nâng niu.
-            </p>
-
-            <h3 style={{ fontFamily: 'var(--font-serif-display)', fontSize: '1.6rem', color: 'var(--color-dark-charcoal)', margin: '2rem 0 1rem' }}>
-              Tinh thần thẩm mỹ
-            </h3>
-
-            <p>
-              Giao diện website được thiết kế với gam màu kem ấm (#F5F0E8), sắc nâu trầm (#A58B70) và đen than (#292B2F), 
-              kết hợp cùng kiểu chữ serif thanh lịch và các hiệu ứng chuyển động khẽ khàng. Chúng tôi từ chối những bảng màu chói lóa 
-              hay giao diện công nghiệp khô cứng, để từng bức ảnh của bạn được cất giữ trọn vẹn trong một không gian giàu chất thơ và tính điện ảnh.
+              Từng bức ảnh được lưu trữ tại đây đều mang một dấu ấn khó phai: từ nụ cười rạng rỡ của Em trong ngày sinh nhật tuổi 20, 
+              cho đến chiếc bảng gỗ nhỏ xinh <em>"HAPPY BIRTHDAY ANH ❤"</em> do chính tay Em chuẩn bị trong buổi tối hẹn hò ấm áp. 
+              Đó là những khoảnh khắc mà thời gian có thể trôi qua, nhưng tình cảm và hơi ấm thì sẽ mãi đọng lại vẹn nguyên như phút ban đầu.
             </p>
 
             <h3 style={{ fontFamily: 'var(--font-serif-display)', fontSize: '1.6rem', color: 'var(--color-dark-charcoal)', margin: '2rem 0 1rem' }}>
-              Bản quyền & Sự tôn trọng
+              Cơ chế lưu trữ tự động
             </h3>
 
             <p>
-              Mọi bức ảnh và câu chuyện được lưu lại tại đây đều được gìn giữ với lòng trân quý sâu sắc nhất. 
-              Nếu bạn cũng có những năm tháng muốn cất giữ, hy vọng không gian này sẽ mang lại cho bạn sự an yên và gợi nhắc về những điều đẹp đẽ trong cuộc đời.
+              Website được xây dựng với cơ chế quản lý ảnh thông minh và tự động hoàn toàn:
+            </p>
+            <ul style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem', color: '#4a5158' }}>
+              <li style={{ marginBottom: '0.5rem' }}>
+                <strong>Ảnh của Nàng (TTLA):</strong> Được đặt tên bắt đầu bằng tiền tố <code>TTLAPic...</code> (ví dụ: <code>TTLAPic1.jpg</code>, <code>TTLAPic2.jpg</code>...).
+              </li>
+              <li style={{ marginBottom: '0.5rem' }}>
+                <strong>Ảnh của Chàng (NQA):</strong> Được đặt tên bắt đầu bằng <code>NQA...</code> (ví dụ: <code>NQA1.jpg</code>...). Hiện tại khung ảnh của NQA đang được để trống nền trắng tao nhã, sẵn sàng đón chờ những tấm hình tiếp theo.
+              </li>
+              <li>
+                <strong>Tự động nhận diện:</strong> Mỗi khi có ảnh mới được lưu vào thư mục <code>public/images/</code>, hệ thống sẽ tự động quét, phân loại chủ đề và hiển thị lên giao diện mà không cần phải can thiệp hay sửa mã nguồn thủ công.
+              </li>
+            </ul>
+
+            <h3 style={{ fontFamily: 'var(--font-serif-display)', fontSize: '1.6rem', color: 'var(--color-dark-charcoal)', margin: '2rem 0 1rem' }}>
+              Lời nhắn gửi cho mai sau
+            </h3>
+
+            <p>
+              Dù 10 năm, 20 năm hay nửa thế kỷ nữa trôi qua, khi mở lại trang web này, hy vọng Em và Anh sẽ luôn mỉm cười 
+              khi nhìn lại những tháng năm thanh xuân tươi đẹp nhất mà hai đứa đã từng cùng nhau cất giữ.
             </p>
           </div>
 
@@ -65,7 +74,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               className="btn btn-primary"
               onClick={() => onNavigate('gallery')}
             >
-              Xem thư viện ảnh
+              Xem ảnh của Em (TTLA)
             </button>
             <button
               type="button"

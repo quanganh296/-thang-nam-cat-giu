@@ -1,3 +1,5 @@
+export type PhotoSubject = 'ttla' | 'nqa' | 'couple';
+
 export interface Photo {
   id: string;
   title: string;
@@ -11,6 +13,9 @@ export interface Photo {
   featured?: boolean;
   aspect?: 'portrait' | 'landscape' | 'square';
   filmStock?: string;
+  subject?: PhotoSubject;
+  isPlaceholder?: boolean;
+  sequenceNumber?: number;
 }
 
 export interface Album {

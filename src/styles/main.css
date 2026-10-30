@@ -75,8 +75,13 @@ body::before {
   height: 100vh;
   pointer-events: none;
   opacity: 0.025;
-  z-index: 9999;
+  z-index: 1;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+#root {
+  position: relative;
+  z-index: 2;
 }
 
 /* Focus styles for keyboard accessibility */
@@ -1384,3 +1389,263 @@ img {
     scroll-behavior: auto !important;
   }
 }
+
+/* ========================================================
+   PERSONAL MEMORY ARCHIVE & AUTO-INGESTION SYSTEM STYLES
+   ======================================================== */
+
+.blank-white-frame {
+  background-color: #FFFFFF !important;
+  border: 1.5px dashed rgba(165, 139, 112, 0.45) !important;
+  box-shadow: inset 0 0 25px rgba(245, 240, 232, 0.8) !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  min-height: 280px;
+}
+
+.blank-frame-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  z-index: 1;
+}
+
+.blank-avatar-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-paper-light);
+  border: 1.5px solid var(--color-warm-brown);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-warm-brown);
+  box-shadow: var(--shadow-sm);
+}
+
+.blank-frame-heading {
+  font-family: var(--font-serif-display);
+  font-size: 1.25rem;
+  color: var(--color-dark-charcoal);
+  margin: 0;
+}
+
+.blank-frame-note {
+  font-size: 0.82rem;
+  color: var(--color-blue-gray);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 250px;
+}
+
+.blank-frame-note code {
+  background: rgba(165, 139, 112, 0.15);
+  padding: 0.15rem 0.35rem;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: var(--color-dark-charcoal);
+}
+
+.blank-frame-badge {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  background: var(--color-cream);
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  color: var(--color-warm-brown);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--color-border-subtle);
+}
+
+/* Polaroid Blank Placeholder */
+.polaroid-blank-placeholder .blank-white-frame {
+  min-height: 220px;
+  background-color: #FFFFFF !important;
+  border: 1.5px dashed rgba(165, 139, 112, 0.4) !important;
+}
+
+.polaroid-blank-placeholder .blank-frame-icon {
+  font-size: 2rem;
+  display: block;
+}
+
+.polaroid-blank-placeholder .blank-frame-title {
+  font-family: var(--font-serif-display);
+  font-size: 1.1rem;
+  color: var(--color-dark-charcoal);
+  display: block;
+}
+
+.polaroid-blank-placeholder .blank-frame-sub {
+  font-size: 0.78rem;
+  color: var(--color-blue-gray);
+  display: block;
+}
+
+/* Subject Badges & Tags */
+.subject-corner-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: rgba(41, 43, 47, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.subject-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+.ttla-tag {
+  background: rgba(196, 125, 90, 0.15);
+  color: #A85A36;
+  border: 1px solid rgba(196, 125, 90, 0.3);
+}
+
+.nqa-tag {
+  background: rgba(115, 123, 131, 0.15);
+  color: #4B5259;
+  border: 1px solid rgba(115, 123, 131, 0.3);
+}
+
+/* Auto Ingestion Notice Banner */
+.auto-ingestion-banner {
+  background: linear-gradient(135deg, rgba(250, 247, 242, 0.98), rgba(245, 240, 232, 0.95));
+  border: 1px solid rgba(165, 139, 112, 0.35);
+  border-left: 4px solid var(--color-warm-brown);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  animation: fadeInDown 0.4s ease-out;
+}
+
+.auto-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.88rem;
+  color: #3b4046;
+  line-height: 1.55;
+}
+
+.auto-banner-content code {
+  background: rgba(165, 139, 112, 0.15);
+  padding: 0.15rem 0.35rem;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 0.82rem;
+  color: var(--color-dark-charcoal);
+}
+
+.auto-banner-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.auto-banner-close {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--color-blue-gray);
+  cursor: pointer;
+  padding: 0.25rem;
+  transition: color var(--transition-fast);
+}
+
+.auto-banner-close:hover {
+  color: var(--color-dark-charcoal);
+}
+
+/* Subject Filter Row */
+.subject-filter-row {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.subject-pill {
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-paper-light);
+  border: 1px solid var(--color-border-subtle);
+  color: var(--color-dark-charcoal);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.subject-pill:hover {
+  border-color: var(--color-warm-brown);
+  background: #FFF;
+  transform: translateY(-1px);
+}
+
+.subject-pill.active {
+  background: var(--color-dark-charcoal);
+  color: #FFFFFF;
+  border-color: var(--color-dark-charcoal);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Lightbox Blank Placeholder */
+.lightbox-blank-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+  width: 100%;
+  padding: 2rem;
+}
+
+.lightbox-blank-box {
+  background: #FFFFFF;
+  border: 2px dashed rgba(165, 139, 112, 0.5);
+  border-radius: var(--radius-md);
+  padding: 3rem 2rem;
+  text-align: center;
+  max-width: 480px;
+  box-shadow: var(--shadow-md);
+}
+
+.lightbox-blank-box code {
+  background: rgba(165, 139, 112, 0.15);
+  padding: 0.15rem 0.35rem;
+  border-radius: 3px;
+  font-family: monospace;
+}
+

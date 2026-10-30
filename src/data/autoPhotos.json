@@ -1,0 +1,74 @@
+{
+  "updatedAt": "2026-10-30T02:47:08.344Z",
+  "ttlaCount": 2,
+  "nqaCount": 0,
+  "otherCount": 0,
+  "totalCount": 3,
+  "photos": [
+    {
+      "id": "photo-ttla-1",
+      "title": "Nàng Thơ Tuổi 20 — TTLAPic1",
+      "caption": "Nụ cười rạng ngời và ánh mắt trong trẻo của người con gái anh yêu trong ngày sinh nhật tuổi 20, tựa như một đóa hoa thơm ngát giữa nắng ban mai.",
+      "url": "images/TTLAPic1.jpg",
+      "date": "Sinh nhật tuổi 20",
+      "location": "Hà Nội",
+      "albumId": "goc-cua-em",
+      "albumName": "Nụ Cười Của Em (TTLA)",
+      "tags": [
+        "TTLA",
+        "Tuổi 20",
+        "Nàng thơ",
+        "Nụ cười"
+      ],
+      "featured": true,
+      "aspect": "portrait",
+      "filmStock": "Kodak Portra 400",
+      "subject": "ttla",
+      "isPlaceholder": false,
+      "sequenceNumber": 1
+    },
+    {
+      "id": "photo-ttla-2",
+      "title": "Bữa Tối \"Happy Birthday Anh ❤\" — TTLAPic2",
+      "caption": "Bữa tối ấm cúng cùng chiếc bảng xinh xắn Em chuẩn bị mừng sinh nhật Anh. Ánh mắt dịu dàng ngước nhìn qua bàn ăn là món quà vô giá nhất mà cuộc đời trao tặng cho Anh.",
+      "url": "images/TTLAPic2.jpg",
+      "date": "Sinh nhật Anh",
+      "location": "Hà Nội",
+      "albumId": "ngay-ben-nhau",
+      "albumName": "Những Ngày Bên Nhau",
+      "tags": [
+        "TTLA",
+        "Sinh nhật Anh",
+        "Hẹn hò",
+        "Kỷ niệm"
+      ],
+      "featured": true,
+      "aspect": "portrait",
+      "filmStock": "Cinestill 800T",
+      "subject": "ttla",
+      "isPlaceholder": false,
+      "sequenceNumber": 2
+    },
+    {
+      "id": "photo-nqa-placeholder-1",
+      "title": "Góc Của NQA (Đang Chờ Ảnh)",
+      "caption": "Khung ảnh dành riêng cho chàng trai. Đang để trống đón chờ bức ảnh đầu tiên (NQA1.jpg)...",
+      "url": "",
+      "date": "Chờ đón",
+      "location": "Góc của Anh",
+      "albumId": "goc-cua-anh",
+      "albumName": "Góc Của NQA",
+      "tags": [
+        "NQA",
+        "Chàng trai",
+        "Chờ đón"
+      ],
+      "featured": true,
+      "aspect": "portrait",
+      "filmStock": "Khung ảnh trắng",
+      "subject": "nqa",
+      "isPlaceholder": true,
+      "sequenceNumber": 1
+    }
+  ]
+}

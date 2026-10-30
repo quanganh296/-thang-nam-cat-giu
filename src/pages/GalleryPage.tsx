@@ -16,8 +16,10 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
   onOpenLightbox
 }) => {
   const [selectedAlbum, setSelectedAlbum] = useState<string>(initialAlbumId);
+  const [selectedSubject, setSelectedSubject] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedTag, setSelectedTag] = useState<string>('all');
+  const [showAutoTip, setShowAutoTip] = useState<boolean>(true);
 
   // Extract all unique tags
   const allTags = useMemo(() => {
@@ -26,9 +28,15 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
     return Array.from(tagsSet);
   }, [photos]);
 
-  // Filter photos based on album, tag, search query
+  // Filter photos based on subject, album, tag, search query
   const filteredPhotos = useMemo(() => {
     return photos.filter((photo) => {
+      // Subject filter
+      if (selectedSubject !== 'all') {
+        if (selectedSubject === 'ttla' && photo.subject !== 'ttla') return false;
+        if (selectedSubject === 'nqa' && photo.subject !== 'nqa') return false;
+        if (selectedSubject === 'couple' && photo.subject !== 'couple') return false;
+      }
       // Album filter
       if (selectedAlbum !== 'all' && photo.albumId !== selectedAlbum) {
         return false;
@@ -48,10 +56,11 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
       }
       return true;
     });
-  }, [photos, selectedAlbum, selectedTag, searchQuery]);
+  }, [photos, selectedSubject, selectedAlbum, selectedTag, searchQuery]);
 
   const resetFilters = () => {
     setSelectedAlbum('all');
+    setSelectedSubject('all');
     setSelectedTag('all');
     setSearchQuery('');
   };
@@ -61,11 +70,57 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
       <div className="container">
         {/* Header */}
         <div className="section-header">
-          <span className="section-tag">Thư Viện Ảnh</span>
+          <span className="section-tag">Thư Viện Ảnh Tình Yêu</span>
           <h1 className="section-title">Kho Lưu Giữ Kỷ Niệm</h1>
           <p className="section-subtitle">
-            Từng bức hình là một lát cắt thời gian được ngưng đọng trên từng vệt sáng và thước film hoài niệm.
+            Nơi gom góp những nụ cười trong trẻo của Em (TTLA) và những dấu ấn của Anh (NQA) qua từng năm tháng yêu thương.
           </p>
+        </div>
+
+        {/* Automatic Ingestion System Notice */}
+        {showAutoTip && (
+          <div className="auto-ingestion-banner">
+            <div className="auto-banner-content">
+              <span className="auto-banner-icon">✨</span>
+              <div>
+                <strong>Cơ chế tự động tải lên:</strong> Lưu ảnh vào <code>public/images/</code> với tên{' '}
+                <code>TTLAPic...</code> (ảnh của Em) hoặc <code>NQA...</code> (ảnh của Anh). Hệ thống tự động nhận diện, sắp xếp thứ tự và hiển thị mà không cần chỉnh sửa thủ công!
+              </div>
+            </div>
+            <button 
+              type="button" 
+              className="auto-banner-close" 
+              onClick={() => setShowAutoTip(false)}
+              aria-label="Đóng thông báo"
+            >
+              ✕
+            </button>
+          </div>
+        )}
+
+        {/* Subject Filter Pills */}
+        <div className="subject-filter-row">
+          <button
+            type="button"
+            className={`subject-pill ${selectedSubject === 'all' ? 'active' : ''}`}
+            onClick={() => setSelectedSubject('all')}
+          >
+            Tất Cả ({photos.length})
+          </button>
+          <button
+            type="button"
+            className={`subject-pill ${selectedSubject === 'ttla' ? 'active' : ''}`}
+            onClick={() => setSelectedSubject('ttla')}
+          >
+            💖 Nàng Thơ TTLA ({photos.filter((p) => p.subject === 'ttla').length})
+          </button>
+          <button
+            type="button"
+            className={`subject-pill ${selectedSubject === 'nqa' ? 'active' : ''}`}
+            onClick={() => setSelectedSubject('nqa')}
+          >
+            👤 Chàng Trai NQA ({photos.filter((p) => p.subject === 'nqa').length})
+          </button>
         </div>
 
         {/* Toolbar */}
@@ -76,7 +131,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
               className={`filter-pill ${selectedAlbum === 'all' ? 'active' : ''}`}
               onClick={() => setSelectedAlbum('all')}
             >
-              Tất cả ({photos.length})
+              Tất cả album
             </button>
             {albums.map((album) => (
               <button
@@ -97,7 +152,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
             </svg>
             <input
               type="text"
-              placeholder="Tìm theo địa điểm, tựa đề, film..."
+              placeholder="Tìm kiếm nụ cười, kỷ niệm, sinh nhật..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               aria-label="Tìm kiếm ảnh"
@@ -141,8 +196,8 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
 
         {/* Counter */}
         <div style={{ fontSize: '0.9rem', color: 'var(--color-blue-gray)', marginBottom: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <span>Đang hiển thị <strong>{filteredPhotos.length}</strong> / {photos.length} bức ảnh</span>
-          {(selectedAlbum !== 'all' || selectedTag !== 'all' || searchQuery) && (
+          <span>Đang hiển thị <strong>{filteredPhotos.length}</strong> / {photos.length} khung hình</span>
+          {(selectedAlbum !== 'all' || selectedSubject !== 'all' || selectedTag !== 'all' || searchQuery) && (
             <button
               type="button"
               onClick={resetFilters}
@@ -172,9 +227,9 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
               <line x1="9" y1="9" x2="15" y2="15" />
               <line x1="15" y1="9" x2="9" y2="15" />
             </svg>
-            <h3 className="empty-state-title">Không tìm thấy bức ảnh nào</h3>
+            <h3 className="empty-state-title">Chưa có bức ảnh nào phù hợp</h3>
             <p className="empty-state-text">
-              Không có bức ảnh nào khớp với từ khóa tìm kiếm hoặc bộ lọc hiện tại. Hãy thử tìm với từ khóa khác nhé.
+              Hãy thử chọn bộ lọc khác hoặc tìm kiếm với từ khóa khác nhé.
             </p>
             <button
               type="button"

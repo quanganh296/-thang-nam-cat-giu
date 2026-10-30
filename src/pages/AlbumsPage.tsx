@@ -26,10 +26,10 @@ export const AlbumsPage: React.FC<AlbumsPageProps> = ({
       <div className="container">
         {/* Header */}
         <div className="section-header">
-          <span className="section-tag">Tuyển Tập</span>
+          <span className="section-tag">Tuyển Tập Tình Yêu</span>
           <h1 className="section-title">Những Album Kỷ Niệm</h1>
           <p className="section-subtitle">
-            Mỗi tập ảnh là một cuốn nhật ký thu nhỏ, gom góp những mảnh ghép của thời gian và năm tháng.
+            Mỗi tập ảnh là một cuốn nhật ký thu nhỏ, cất giữ nụ cười của Em (TTLA), những ngày hẹn hò và kỷ niệm của NQA.
           </p>
         </div>
 
