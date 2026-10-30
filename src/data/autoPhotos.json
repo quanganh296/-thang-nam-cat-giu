@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T02:47:08.344Z",
+  "updatedAt": "2026-10-30T03:11:51.175Z",
   "ttlaCount": 2,
   "nqaCount": 0,
   "otherCount": 0,
@@ -8,17 +8,17 @@
     {
       "id": "photo-ttla-1",
       "title": "Nàng Thơ Tuổi 20 — TTLAPic1",
-      "caption": "Nụ cười rạng ngời và ánh mắt trong trẻo của người con gái anh yêu trong ngày sinh nhật tuổi 20, tựa như một đóa hoa thơm ngát giữa nắng ban mai.",
+      "caption": "Nụ cười rạng ngời và ánh mắt trong trẻo của người con gái tôi thầm thương trong ngày sinh nhật tuổi 20. Đứng từ phía sau ngắm nhìn, chỉ cầu mong em luôn an yên và rạng rỡ như thế.",
       "url": "images/TTLAPic1.jpg",
       "date": "Sinh nhật tuổi 20",
       "location": "Hà Nội",
       "albumId": "goc-cua-em",
-      "albumName": "Nụ Cười Của Em (TTLA)",
+      "albumName": "Nụ Cười Của Nàng (TTLA)",
       "tags": [
         "TTLA",
         "Tuổi 20",
         "Nàng thơ",
-        "Nụ cười"
+        "Thầm thương"
       ],
       "featured": true,
       "aspect": "portrait",
@@ -30,17 +30,17 @@
     {
       "id": "photo-ttla-2",
       "title": "Bữa Tối \"Happy Birthday Anh ❤\" — TTLAPic2",
-      "caption": "Bữa tối ấm cúng cùng chiếc bảng xinh xắn Em chuẩn bị mừng sinh nhật Anh. Ánh mắt dịu dàng ngước nhìn qua bàn ăn là món quà vô giá nhất mà cuộc đời trao tặng cho Anh.",
+      "caption": "Bữa tối sinh nhật ấm áp cùng chiếc bảng gỗ xinh xắn Em chuẩn bị chúc mừng Anh. Dù chỉ là một khoảnh khắc giản dị, với một người yêu đơn phương như Anh, đây là kỷ niệm dịu dàng và quý giá nhất đời.",
       "url": "images/TTLAPic2.jpg",
       "date": "Sinh nhật Anh",
       "location": "Hà Nội",
-      "albumId": "ngay-ben-nhau",
-      "albumName": "Những Ngày Bên Nhau",
+      "albumId": "ky-niem-ben-em",
+      "albumName": "Kỷ Niệm Từng Có",
       "tags": [
         "TTLA",
         "Sinh nhật Anh",
-        "Hẹn hò",
-        "Kỷ niệm"
+        "Kỷ niệm quý giá",
+        "Lắng đọng"
       ],
       "featured": true,
       "aspect": "portrait",
@@ -51,16 +51,16 @@
     },
     {
       "id": "photo-nqa-placeholder-1",
-      "title": "Góc Của NQA (Đang Chờ Ảnh)",
-      "caption": "Khung ảnh dành riêng cho chàng trai. Đang để trống đón chờ bức ảnh đầu tiên (NQA1.jpg)...",
+      "title": "Góc Của NQA (Người Lặng Thầm Dõi Theo)",
+      "caption": "Khung ảnh dành cho người đứng sau ống kính. Hiện đang để trống đón chờ bức ảnh đầu tiên (NQA1.jpg)...",
       "url": "",
       "date": "Chờ đón",
-      "location": "Góc của Anh",
+      "location": "Góc lặng thầm",
       "albumId": "goc-cua-anh",
-      "albumName": "Góc Của NQA",
+      "albumName": "Góc Của NQA (Người Lặng Thầm)",
       "tags": [
         "NQA",
-        "Chàng trai",
+        "Lặng thầm",
         "Chờ đón"
       ],
       "featured": true,

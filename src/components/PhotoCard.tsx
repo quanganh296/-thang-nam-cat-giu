@@ -32,7 +32,7 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ photo, onClick, styleMode 
             </div>
           </div>
           <div className="polaroid-caption">{photo.title}</div>
-          <div className="polaroid-date-stamp">NQA — Đang chờ ảnh</div>
+          <div className="polaroid-date-stamp">NQA — Người lặng thầm dõi theo</div>
         </div>
       );
     }
@@ -53,11 +53,11 @@ export const PhotoCard: React.FC<PhotoCardProps> = ({ photo, onClick, styleMode 
             </div>
             <h4 className="blank-frame-heading">Góc Của NQA</h4>
             <p className="blank-frame-note">
-              Ảnh hiện đang để trống nền trắng. Khi thêm file <code>NQA1.jpg</code> vào <code>public/images/</code>, ảnh sẽ tự động hiển thị tại đây!
+              Khung ảnh người đứng sau ống kính. Hiện đang để trống nền trắng, khi thêm file <code>NQA1.jpg</code> vào <code>public/images/</code>, ảnh sẽ tự động hiển thị tại đây!
             </p>
             <span className="blank-frame-badge">Khung ảnh trắng</span>
           </div>
-          <span className="photo-film-badge">Chờ đón NQA</span>
+          <span className="photo-film-badge">Người đứng sau ống kính</span>
         </div>
 
         <div className="photo-meta">

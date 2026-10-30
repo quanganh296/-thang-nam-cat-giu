@@ -16,10 +16,10 @@ export const TimelinePage: React.FC<TimelinePageProps> = ({
       <div className="container">
         {/* Header */}
         <div className="section-header">
-          <span className="section-tag">Dòng Thời Gian Tình Yêu</span>
-          <h1 className="section-title">Hành Trình NQA & TTLA</h1>
+          <span className="section-tag">Dòng Thời Gian Kỷ Niệm</span>
+          <h1 className="section-title">Những Mảnh Ghép Thanh Xuân</h1>
           <p className="section-subtitle">
-            Từng mốc thời gian đánh dấu những khoảnh khắc ngọt ngào: từ ngày đầu gặp gỡ, sinh nhật tuổi 20 của Em, đến bữa tối ấm áp "Happy Birthday Anh ❤".
+            Từng mốc thời gian lưu lại những khoảnh khắc dịu dàng: từ ngày đầu biết tương tư, sinh nhật tuổi 20 của nàng, đến bữa tối sinh nhật ấm áp "Happy Birthday Anh ❤".
           </p>
         </div>
 

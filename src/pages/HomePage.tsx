@@ -32,8 +32,8 @@ export const HomePage: React.FC<HomePageProps> = ({
         <div className="container hero-grid">
           <div className="hero-content">
             <div className="hero-badge">
-              <span>💖</span>
-              <span>Ký ức tình yêu • NQA & TTLA</span>
+              <span>🕊️</span>
+              <span>Tâm tình thầm lặng • NQA gửi TTLA</span>
             </div>
             
             <h1 className="hero-title">
@@ -41,11 +41,11 @@ export const HomePage: React.FC<HomePageProps> = ({
             </h1>
 
             <p className="hero-quote">
-              “Trong muôn vàn cảnh sắc nhân gian, nụ cười của em là điều kỳ diệu nhất mà anh muốn cất giữ.”
+              “Có những tình cảm chưa từng một lần được gọi tên, nhưng suốt những năm tháng ấy, em luôn là điều dịu dàng nhất.”
             </p>
 
             <p className="hero-description">
-              Không gian riêng tư lưu giữ trọn vẹn những bức hình của người con gái tôi yêu (TTLA) và kỷ niệm tình yêu của chúng tôi — từ nụ cười tuổi 20 tinh khôi đến bữa tối sinh nhật ấm áp đong đầy hạnh phúc.
+              Góc nhỏ riêng tư nơi NQA lặng lẽ cất giữ những khoảnh khắc của người con gái mình thầm thương (TTLA). Không mong cầu hồi đáp hay một danh phận, chỉ mong mỗi nụ cười và bước đi của em đều ngập tràn an yên.
             </p>
 
             <div className="hero-actions">
@@ -54,7 +54,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 className="btn btn-primary"
                 onClick={() => onNavigate('gallery')}
               >
-                <span>Xem ảnh của Em</span>
+                <span>Xem ảnh của Nàng</span>
                 <span>→</span>
               </button>
 
@@ -63,7 +63,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 className="btn btn-outline"
                 onClick={() => onNavigate('timeline')}
               >
-                <span>Dòng thời gian tình yêu</span>
+                <span>Dòng thời gian kỷ niệm</span>
               </button>
             </div>
           </div>
@@ -87,10 +87,10 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section style={{ padding: '4.5rem 0', backgroundColor: 'var(--color-paper-light)', borderTop: '1px solid var(--color-border-subtle)', borderBottom: '1px solid var(--color-border-subtle)' }}>
         <div className="container">
           <div className="section-header">
-            <span className="section-tag">Album Yêu Thương</span>
-            <h2 className="section-title">Những Album Chọn Lọc</h2>
+            <span className="section-tag">Góc Kỷ Niệm</span>
+            <h2 className="section-title">Những Album Cất Giữ</h2>
             <p className="section-subtitle">
-              Mỗi album là một chương nhỏ của chuyện tình, lưu lại từng ánh mắt, nụ cười và khoảnh khắc hai ta bên nhau.
+              Mỗi album là một góc nhỏ của tâm tư, lưu lại bóng hình của nàng thơ và những khoảnh khắc hiếm hoi được ở bên em.
             </p>
           </div>
 
@@ -123,7 +123,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             <span className="section-tag">Khoảnh Khắc Đọng Lại</span>
             <h2 className="section-title">Từng Khung Hình Lưu Giữ</h2>
             <p className="section-subtitle">
-              Mỗi bức ảnh là một lời thì thầm của trái tim, lưu lại trọn vẹn nét dịu dàng của Em và lời ước hẹn của Chúng Ta.
+              Dù chỉ là người đứng từ phía xa, nụ cười của em luôn là điều quý giá nhất mà tôi muốn giữ trọn theo năm tháng.
             </p>
           </div>
 
@@ -158,7 +158,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         <section style={{ padding: '4.5rem 0', backgroundColor: 'rgba(231, 220, 203, 0.45)', borderTop: '1px solid var(--color-border-subtle)' }}>
           <div className="container container-narrow">
             <div className="section-header" style={{ marginBottom: '2rem' }}>
-              <span className="section-tag">Tâm Tình Của Anh</span>
+              <span className="section-tag">Tâm Sự Của Anh</span>
               <h2 className="section-title" style={{ fontSize: '2.2rem' }}>{latestJournal.title}</h2>
               <p className="section-subtitle">
                 {latestJournal.date} • {latestJournal.readTime}

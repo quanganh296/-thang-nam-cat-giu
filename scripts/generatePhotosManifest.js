@@ -53,15 +53,15 @@ export function scanAndGenerateManifest() {
 
   const photosList = [];
 
-  // Story annotations for known photos
+  // Story annotations reflecting unrequited, tender, silent devotion
   const knownStory = {
     ttla: {
       1: {
         title: 'Nàng Thơ Tuổi 20 — TTLAPic1',
-        caption: 'Nụ cười rạng ngời và ánh mắt trong trẻo của người con gái anh yêu trong ngày sinh nhật tuổi 20, tựa như một đóa hoa thơm ngát giữa nắng ban mai.',
+        caption: 'Nụ cười rạng ngời và ánh mắt trong trẻo của người con gái tôi thầm thương trong ngày sinh nhật tuổi 20. Đứng từ phía sau ngắm nhìn, chỉ cầu mong em luôn an yên và rạng rỡ như thế.',
         albumId: 'goc-cua-em',
-        albumName: 'Nụ Cười Của Em (TTLA)',
-        tags: ['TTLA', 'Tuổi 20', 'Nàng thơ', 'Nụ cười'],
+        albumName: 'Nụ Cười Của Nàng (TTLA)',
+        tags: ['TTLA', 'Tuổi 20', 'Nàng thơ', 'Thầm thương'],
         location: 'Hà Nội',
         date: 'Sinh nhật tuổi 20',
         featured: true,
@@ -70,10 +70,10 @@ export function scanAndGenerateManifest() {
       },
       2: {
         title: 'Bữa Tối "Happy Birthday Anh ❤" — TTLAPic2',
-        caption: 'Bữa tối ấm cúng cùng chiếc bảng xinh xắn Em chuẩn bị mừng sinh nhật Anh. Ánh mắt dịu dàng ngước nhìn qua bàn ăn là món quà vô giá nhất mà cuộc đời trao tặng cho Anh.',
-        albumId: 'ngay-ben-nhau',
-        albumName: 'Những Ngày Bên Nhau',
-        tags: ['TTLA', 'Sinh nhật Anh', 'Hẹn hò', 'Kỷ niệm'],
+        caption: 'Bữa tối sinh nhật ấm áp cùng chiếc bảng gỗ xinh xắn Em chuẩn bị chúc mừng Anh. Dù chỉ là một khoảnh khắc giản dị, với một người yêu đơn phương như Anh, đây là kỷ niệm dịu dàng và quý giá nhất đời.',
+        albumId: 'ky-niem-ben-em',
+        albumName: 'Kỷ Niệm Từng Có',
+        tags: ['TTLA', 'Sinh nhật Anh', 'Kỷ niệm quý giá', 'Lắng đọng'],
         location: 'Hà Nội',
         date: 'Sinh nhật Anh',
         featured: true,
@@ -86,13 +86,13 @@ export function scanAndGenerateManifest() {
   // 1. Process TTLA photos
   ttlaPhotos.forEach((item) => {
     const meta = knownStory.ttla[item.order] || {
-      title: `Nụ Cười Của Em — TTLAPic${item.order || item.baseName}`,
-      caption: `Khoảnh khắc dịu dàng của người con gái anh yêu, được cất giữ trọn vẹn trong năm tháng.`,
+      title: `Bóng Hình Của Nàng — TTLAPic${item.order || item.baseName}`,
+      caption: `Khoảnh khắc dịu dàng của người con gái tôi thầm thương, được lặng thầm cất giữ trong năm tháng.`,
       albumId: 'goc-cua-em',
-      albumName: 'Nụ Cười Của Em (TTLA)',
-      tags: ['TTLA', 'Nụ cười', 'Kỷ niệm'],
+      albumName: 'Nụ Cười Của Nàng (TTLA)',
+      tags: ['TTLA', 'Nụ cười', 'Lặng thầm'],
       location: 'Hà Nội',
-      date: 'Kỷ niệm ngọt ngào',
+      date: 'Kỷ niệm cất giữ',
       featured: item.order <= 2,
       filmStock: 'Kodak Gold 200',
       aspect: 'portrait'
@@ -123,13 +123,13 @@ export function scanAndGenerateManifest() {
       photosList.push({
         id: `photo-nqa-${item.order || item.baseName}`,
         title: `Chân Dung NQA — NQA${item.order || item.baseName}`,
-        caption: `Khoảnh khắc của chàng trai, người nguyện cất giữ mọi yêu thương trao trọn về Em.`,
+        caption: `Khoảnh khắc của chàng trai, người lặng lẽ đứng từ xa để dõi theo và chúc phúc cho Em.`,
         url: `images/${item.filename}`,
         date: 'Kỷ niệm',
         location: 'Hà Nội',
         albumId: 'goc-cua-anh',
-        albumName: 'Góc Của NQA',
-        tags: ['NQA', 'Chàng trai', 'Kỷ niệm'],
+        albumName: 'Góc Của NQA (Người Lặng Thầm)',
+        tags: ['NQA', 'Lặng thầm', 'Tự sự'],
         featured: item.order === 1,
         aspect: 'portrait',
         filmStock: 'Fujifilm Pro 400H',
@@ -139,17 +139,17 @@ export function scanAndGenerateManifest() {
       });
     });
   } else {
-    // As explicitly requested: NQA photos don't exist yet, so provide blank/white placeholder frame
+    // White placeholder for NQA
     photosList.push({
       id: 'photo-nqa-placeholder-1',
-      title: 'Góc Của NQA (Đang Chờ Ảnh)',
-      caption: 'Khung ảnh dành riêng cho chàng trai. Đang để trống đón chờ bức ảnh đầu tiên (NQA1.jpg)...',
+      title: 'Góc Của NQA (Người Lặng Thầm Dõi Theo)',
+      caption: 'Khung ảnh dành cho người đứng sau ống kính. Hiện đang để trống đón chờ bức ảnh đầu tiên (NQA1.jpg)...',
       url: '',
       date: 'Chờ đón',
-      location: 'Góc của Anh',
+      location: 'Góc lặng thầm',
       albumId: 'goc-cua-anh',
-      albumName: 'Góc Của NQA',
-      tags: ['NQA', 'Chàng trai', 'Chờ đón'],
+      albumName: 'Góc Của NQA (Người Lặng Thầm)',
+      tags: ['NQA', 'Lặng thầm', 'Chờ đón'],
       featured: true,
       aspect: 'portrait',
       filmStock: 'Khung ảnh trắng',
@@ -164,13 +164,13 @@ export function scanAndGenerateManifest() {
     photosList.push({
       id: `photo-other-${idx + 1}`,
       title: `Khoảnh Khắc Kỷ Niệm — ${item.baseName}`,
-      caption: `Mảnh ghép thời gian lưu giữ hành trình yêu thương.`,
+      caption: `Mảnh ghép thời gian lưu lại một thời thanh xuân biết thương một người.`,
       url: `images/${item.filename}`,
       date: 'Kỷ niệm',
       location: 'Hà Nội',
-      albumId: 'ngay-ben-nhau',
-      albumName: 'Những Ngày Bên Nhau',
-      tags: ['Kỷ niệm', 'Chúng ta'],
+      albumId: 'ky-niem-ben-em',
+      albumName: 'Kỷ Niệm Từng Có',
+      tags: ['Kỷ niệm', 'Thanh xuân'],
       featured: false,
       aspect: 'portrait',
       filmStock: 'Ilford HP5',
@@ -194,7 +194,7 @@ export function scanAndGenerateManifest() {
   }
 
   fs.writeFileSync(outputFile, JSON.stringify(manifest, null, 2), 'utf-8');
-  console.log(`[Photo Manifest] Successfully generated ${manifest.photos.length} photos (${ttlaPhotos.length} TTLA, ${nqaPhotos.length} NQA, ${otherPhotos.length} others). Saved to ${outputFile}`);
+  console.log(`[Photo Manifest] Generated ${manifest.photos.length} photos (${ttlaPhotos.length} TTLA, ${nqaPhotos.length} NQA, ${otherPhotos.length} others). Saved to ${outputFile}`);
   return manifest;
 }
 

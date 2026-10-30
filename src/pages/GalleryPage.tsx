@@ -70,10 +70,10 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
       <div className="container">
         {/* Header */}
         <div className="section-header">
-          <span className="section-tag">Thư Viện Ảnh Tình Yêu</span>
+          <span className="section-tag">Thư Viện Kỷ Niệm</span>
           <h1 className="section-title">Kho Lưu Giữ Kỷ Niệm</h1>
           <p className="section-subtitle">
-            Nơi gom góp những nụ cười trong trẻo của Em (TTLA) và những dấu ấn của Anh (NQA) qua từng năm tháng yêu thương.
+            Nơi gom góp những nụ cười trong trẻo của người con gái tôi thầm thương (TTLA) và góc tự sự lặng thầm của NQA.
           </p>
         </div>
 
@@ -84,7 +84,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
               <span className="auto-banner-icon">✨</span>
               <div>
                 <strong>Cơ chế tự động tải lên:</strong> Lưu ảnh vào <code>public/images/</code> với tên{' '}
-                <code>TTLAPic...</code> (ảnh của Em) hoặc <code>NQA...</code> (ảnh của Anh). Hệ thống tự động nhận diện, sắp xếp thứ tự và hiển thị mà không cần chỉnh sửa thủ công!
+                <code>TTLAPic...</code> (ảnh của Nàng) hoặc <code>NQA...</code> (ảnh của Anh). Hệ thống tự động nhận diện, sắp xếp thứ tự và hiển thị mà không cần chỉnh sửa mã nguồn!
               </div>
             </div>
             <button 
@@ -119,7 +119,7 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
             className={`subject-pill ${selectedSubject === 'nqa' ? 'active' : ''}`}
             onClick={() => setSelectedSubject('nqa')}
           >
-            👤 Chàng Trai NQA ({photos.filter((p) => p.subject === 'nqa').length})
+            👤 Góc Của NQA ({photos.filter((p) => p.subject === 'nqa').length})
           </button>
         </div>
 

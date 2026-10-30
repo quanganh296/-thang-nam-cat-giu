@@ -13,10 +13,10 @@ export const JournalPage: React.FC<JournalPageProps> = ({ entries }) => {
       <div className="container">
         {/* Header */}
         <div className="section-header">
-          <span className="section-tag">Nhật Ký & Tâm Tình</span>
-          <h1 className="section-title">Những Trang Thư Gửi Nàng</h1>
+          <span className="section-tag">Nhật Ký & Tâm Sự</span>
+          <h1 className="section-title">Những Dòng Thư Chưa Gửi</h1>
           <p className="section-subtitle">
-            Từng dòng chữ được nắn nót ghi lại với lòng chân thành nhất — gửi tới TTLA, người con gái thắp sáng thanh xuân của NQA.
+            Từng dòng chữ được nắn nót ghi lại với lòng chân thành nhất — gửi tới TTLA, người con gái đã thắp sáng thanh xuân của NQA dù chỉ trong thầm lặng.
           </p>
         </div>
 
